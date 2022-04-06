@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Putting User Input into JS Objects</title>
+    <style>
+        .formBox{
+            padding: 0.5rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="formBox">
+            <label for="url">Url</label>
+            <input type="text" id="url" placeholder="url"/>
+        </div>
+
+        
+        <div class="formBox">
+            <label for="yr">Name</label>
+            <input type="text" id="name" placeholder="name"/>
+        </div>
+        <div class="formBox">
+            <button id="btn">Click to Add</button>
+        </div>
+        <div id="msg">
+            <pre></pre>
+        </div>
+    </form>
+    <script>
+        // let Mybookmarks = [{"toplevel_name": "TTEC Managed Bookmarks"},{"name": "TTEC links","children": [{"url": "https://webmail.teletech.com/","name": "TTEC Mail"},{"url": "https://neighborhood.ttec.com/","name": "TTEC Humanify Neighborhood"},{"url": "https://dm108.bp1.humanify.com/agentdesktop/","name": "Humanify"},{"url": "https://mosaic.ttec.com/","name": "Mosaic"},{"url": "https://asknow.service-now.com/asknow/","name": "AskNow"},{"url": "https://workbooth.info/","name": "Workbooth.info"},{"url": "https://wfo.ttec.com/WFO/","name": "WFO"},{"url": "http://associate.ttecu.com/","name": "TTECU"},{"url": "https://www.ttectalent.com/","name": "TTEC TALENT"},{"url": "https://erp.ttec.com/OA_HTML/AppsLogin","name": "Oracle"},{"url": "https://mybenefits.ttec.com/","name": "myBenefits"},{"url": "https://kronos.ttec.com/wfc/logon","name": "Kronos"},{"url": "https://teletechinc.sharepoint.com/teams/empower_1/SitePages/Home.aspx","name": "Empower"}]},];
+        let Mybookmarks = [];
+        //here you can try to give toplevel or child name just try it no idea  what it is gonna do
+        // // example {id:1592304983049, title: 'Deadpool', year: 2015} 
+        // {"url": "https://webmail.teletech.com/","name": "TTEC Mail"},
+        const Bookmarks = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let movie = {
+            
+                url: document.getElementById('url').value,
+                name: document.getElementById('name').value,
+                
+            }
+            Mybookmarks.push(movie);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {Mybookmarks} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(Mybookmarks, '\t', 0);
+            //(/\\n/g, '')
+            //pre.textContent = '\n' + JSON.stringify(movies, '\t', 
+
+            //saving to localStorage
+            localStorage.setItem('MyMovieList', JSON.stringify(Mybookmarks) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', Bookmarks);
+        });
+    </script>
+</body>
+</html>

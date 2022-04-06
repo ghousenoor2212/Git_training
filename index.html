@@ -1,17 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Title of the document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookmarks Generator</title>
+    <style>
+        .formBox{
+            padding: 0.6rem 4rem;
+            color: blueviolet;
+            font-size: large;
+            position: relative;
+           
+        }
+
+        .btn{
+
+            color: blueviolet;
+            background-color: blueviolet;
+            
+        }
+            
+        
+        
+            
+    </style>
 </head>
-
 <body>
-Hi this is test hmtl.
-<b>Hi this is test hmtl.</b>
-<b>contact</b>
-<p>......................</p>
-<a href="https://github.com/ghousenoor2212/Git_training.git> </a>
-<p>llll<p>
-this change is done from feature-1 branch
-</body>
+    <form>
+        <!-- <divclass="formBox">
+          <label for="toplevel_name">toplevel_name</label>
+          <input type="text" id="toplevel_name" placeholder="toplevel_name"/>
+        </div> -->
 
+
+
+
+
+        <div class="formBox">
+            <label for="url">Url</label>
+            <input type="text" id="url" placeholder="url"/>
+        </div>
+
+        
+        <div class="formBox">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="name"/>
+        
+        
+        </div>
+
+
+        <div class="formBox">
+            <label for="name">Foldername</label>
+            <input type="text" id="Child" value=[] />
+        
+        
+        </div>
+
+        <div class="formBox">
+            <button id="btn">Click to Add</button>
+           
+        </div>
+
+
+
+
+        <div id="msg">
+            <pre></pre>
+        </div>
+
+
+    </form>
+
+  
+    <!-- <script>
+        // let Mybookmarks = [{"toplevel_name": "TTEC Managed Bookmarks"},{"name": "TTEC links","children": [{"url": "https://webmail.teletech.com/","name": "TTEC Mail"},{"url": "https://neighborhood.ttec.com/","name": "TTEC Humanify Neighborhood"},{"url": "https://dm108.bp1.humanify.com/agentdesktop/","name": "Humanify"},{"url": "https://mosaic.ttec.com/","name": "Mosaic"},{"url": "https://asknow.service-now.com/asknow/","name": "AskNow"},{"url": "https://workbooth.info/","name": "Workbooth.info"},{"url": "https://wfo.ttec.com/WFO/","name": "WFO"},{"url": "http://associate.ttecu.com/","name": "TTECU"},{"url": "https://www.ttectalent.com/","name": "TTEC TALENT"},{"url": "https://erp.ttec.com/OA_HTML/AppsLogin","name": "Oracle"},{"url": "https://mybenefits.ttec.com/","name": "myBenefits"},{"url": "https://kronos.ttec.com/wfc/logon","name": "Kronos"},{"url": "https://teletechinc.sharepoint.com/teams/empower_1/SitePages/Home.aspx","name": "Empower"}]},];
+        let Mybookmarks = [];
+        
+        //here you can try to give toplevel or child name just try it no idea  what it is gonna do
+        // // example {id:1592304983049, title: 'Deadpool', year: 2015} 
+        // {"url": "https://webmail.teletech.com/","name": "TTEC Mail"},
+        const Bookmarks = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let movie = {
+                toplevel_name: document.getElementById('toplevel_name').value,
+                //childfolder: document.getElementById('Childfolder').value,
+                url: document.getElementById('url').value,
+                name: document.getElementById('name').value,
+                childfolder: document.getElementById('Childfolder').value,
+            }
+            Mybookmarks.push(movie);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {Mybookmarks} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(Mybookmarks, '\t', 0);
+            //(/\\n/g, '')
+            //pre.textContent = '\n' + JSON.stringify(movies, '\t', 
+
+            //saving to localStorage
+            localStorage.setItem('MyMovieList', JSON.stringify(Mybookmarks) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', Bookmarks);
+        });
+
+
+
+    </script> -->
+
+<script>
+    //  var Mybookmarks = [`{"toplevel_name": "TTEC Managed Bookmarks"},{"name": "TTEC links","children":`];
+           var Mybookmarks = [];
+           
+           
+           //var any = [{}];
+        
+        //here you can try to give toplevel or child name just try it no idea  what it is gonna do
+        
+        // {"url": "https://webmail.teletech.com/","name": "TTEC Mail"},
+        const Bookmarks = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let list = {
+                //toplevel_name: document.getElementById('toplevel_name').value,
+               //childfolder: document.getElementById('Childfolder preloadedValues{any}').value,
+                url: document.getElementById('url').value,
+                name: document.getElementById('name').value,
+                name:document.getElementById('Child').value,
+                
+                }
+
+
+//              var ls = "Name"  
+        
+//           function list() {
+//                 //toplevel_name: document.getElementById('toplevel_name').value,
+//                //childfolder: document.getElementById('Childfolder preloadedValues{any}').value,
+               
+//                 name:document.getElementById($(Child)).value;
+//             }
+//  list("ls")
+            
+
+
+
+        
+                 
+
+            Mybookmarks.push(list);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {Mybookmarks});
+            var pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(Mybookmarks, '\t', 0);
+           
+            //(/\\n/g, '')
+            //pre.textContent = '\n' + JSON.stringify(movies, '\t', 
+
+            //saving to localStorage
+            localStorage.setItem('BookmarkList', JSON.stringify(Mybookmarks) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', Bookmarks);
+        });
+
+
+//         // function App() {
+//   const [data, setData] = useState(null)
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     setData(await getUserData())
+//   } 
+//   fetchData()
+// }, []) 
+
+// return data ? <UserForm preloadedValues={data}/> : <div>Loading...</div>
+// } 
+
+
+
+
+</script>
+
+</body>
 </html>
