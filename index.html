@@ -32,10 +32,9 @@
 
 
 
-main branch
-
+<!-- main branch
 change deon from feature-1 branch
-this change is done from feature-1 branch
+this change is done from feature-1 branch -->
 
 
 </body>
@@ -65,14 +64,21 @@ this change is done from feature-1 branch
 
 
        <div class="formBox">
-            <label for="name">Foldername</label>
-            <input type="text" id="Child" value=[] />
+            <label for="children">Clinet1</label>
+            <input type="text" id="text" value=>
         </div> 
 
         <div class="formBox">
             <button id="btn">Click to Add</button>
            
         </div>
+
+        <!---   <div class="formBox">
+            <label for="name">Foldername</label>
+            <input type="text" id="Child" value=[] />
+        
+        
+        </div>-->
 
 
 
@@ -124,8 +130,8 @@ this change is done from feature-1 branch
     </script> -->
 
 <script>
-    //  var Mybookmarks = [`{"toplevel_name": "TTEC Managed Bookmarks"},{"name": "TTEC links","children":`];
-           var Mybookmarks = [];
+     var Mybookmarks = [{"toplevel_name": "TTEC Managed Bookmarks"},{"name": "TTEC links","children": [{"url": "https://webmail.teletech.com/","name": "TTEC Mail"},{"url": "https://dm108.bp1.humanify.com/agentdesktop/","name": "Humanify"},{"url": "https://mosaic.ttec.com/","name": "Mosaic"},{"url": "https://asknow.service-now.com/asknow/","name": "AskNow"},{"url": "https://workbooth.info/","name": "Workbooth.info"},{"url": "https://wfo.ttec.com/WFO/","name": "WFO"},{"url": "http://associate.ttecu.com/","name": "TTECU"},{"url": "https://erp.ttec.com/OA_HTML/AppsLogin","name": "Oracle"},{"url": "https://mybenefits.ttec.com/","name": "myBenefits"},{"url": "https://kronos.ttec.com/wfc/logon","name": "Kronos"},{"url": "https://empower.ttec.com/Empower","name": "Empower"}]}];
+           //var Mybookmarks = [];
            //var newfolder = 
            
            
@@ -141,7 +147,7 @@ this change is done from feature-1 branch
                //childfolder: document.getElementById('Childfolder preloadedValues{any}').value,
                 url: document.getElementById('url').value,
                 name: document.getElementById('name').value,
-                name:document.getElementById('Child').value,
+                children:document.getElementById('text').value,
 
                 
                 }
