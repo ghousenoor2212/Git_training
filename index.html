@@ -64,12 +64,10 @@ this change is done from feature-1 branch
         </div>
 
 
-        <div class="formBox">
-            <label for="name">Foldername</label>
+       <div class="formBox">
+            <label for="Foldername">Foldername</label>
             <input type="text" id="Child" value=[] />
-        
-        
-        </div>
+        </div> 
 
         <div class="formBox">
             <button id="btn">Click to Add</button>
@@ -134,7 +132,7 @@ this change is done from feature-1 branch
         
         //here you can try to give toplevel or child name just try it no idea  what it is gonna do
         
-        // {"url": "https://webmail.teletech.com/","name": "TTEC Mail"},
+        // {"url": "https://webmail.teletech.comcle/","name": "TTEC Mail"},
         const Bookmarks = (ev)=>{
             ev.preventDefault();  //to stop the form submitting
             let list = {
@@ -142,7 +140,8 @@ this change is done from feature-1 branch
                //childfolder: document.getElementById('Childfolder preloadedValues{any}').value,
                 url: document.getElementById('url').value,
                 name: document.getElementById('name').value,
-                name:document.getElementById('Child').value,
+                foldername:document.getElementById('Child').value,
+
                 
                 }
 
